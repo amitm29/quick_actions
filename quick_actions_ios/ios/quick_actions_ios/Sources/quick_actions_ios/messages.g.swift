@@ -52,6 +52,8 @@ struct ShortcutItemMessage {
   var type: String
   /// Localized title of the item.
   var localizedTitle: String
+  /// Localized subtitle of the item (nullable).
+  var localizedSubtitle: String? = nil
   /// Name of native resource to be displayed as the icon for this item.
   var icon: String? = nil
 
@@ -59,10 +61,12 @@ struct ShortcutItemMessage {
     let type = list[0] as! String
     let localizedTitle = list[1] as! String
     let icon: String? = nilOrValue(list[2])
+    let localizedSubtitle: String? = nilOrValue(list[3])
 
     return ShortcutItemMessage(
       type: type,
       localizedTitle: localizedTitle,
+      localizedSubtitle: localizedSubtitle,
       icon: icon
     )
   }
@@ -71,6 +75,7 @@ struct ShortcutItemMessage {
       type,
       localizedTitle,
       icon,
+      localizedSubtitle,
     ]
   }
 }

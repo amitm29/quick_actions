@@ -28,6 +28,7 @@ class ShortcutItemMessage {
     required this.type,
     required this.localizedTitle,
     this.icon,
+    this.localizedSubtitle,
   });
 
   /// The identifier of this item; should be unique within the app.
@@ -35,6 +36,9 @@ class ShortcutItemMessage {
 
   /// Localized title of the item.
   String localizedTitle;
+
+  /// Localized subtitle of the item (Nullable).
+  String? localizedSubtitle;
 
   /// Name of native resource to be displayed as the icon for this item.
   String? icon;
@@ -44,6 +48,7 @@ class ShortcutItemMessage {
       type,
       localizedTitle,
       icon,
+      localizedSubtitle,
     ];
   }
 
@@ -53,6 +58,7 @@ class ShortcutItemMessage {
       type: result[0]! as String,
       localizedTitle: result[1]! as String,
       icon: result[2] as String?,
+      localizedSubtitle: result[3] as String?,
     );
   }
 }
